@@ -18,13 +18,10 @@ public class UserController {
 
     @PostMapping("/auth/signin")
     public ResponseEntity<?> loginUser(@RequestBody @Valid LoginReqDTO logInfo, BindingResult validations){
-        LoginResDto login = null;
+
 
         if (validations.hasErrors()) {
-            login = new LoginResDto();
-            login.setCode(-1);
-            login.setMessage("Correo o contra vacia");
-            return new ResponseEntity<>(login, HttpStatus.BAD_REQUEST);
+
         }
         return null;
     }
